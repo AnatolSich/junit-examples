@@ -1,4 +1,4 @@
-package com.epam.junit.runner.customrunner.paramrunner;
+package com.epam.junit.runner.customrunner.paramsfromannotationrunner;
 import org.junit.Ignore;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
@@ -12,10 +12,11 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class ParamRuner extends BlockJUnit4ClassRunner {
+//Custom runner to get parameters from special annotation
+public class UseOwnParamsRunner extends BlockJUnit4ClassRunner {
 
-    public ParamRuner(Class<?> klass) throws InitializationError {
-        super(klass);
+    public UseOwnParamsRunner(Class<?> testClass) throws InitializationError {
+        super(testClass);
     }
 
     @Override
@@ -33,16 +34,16 @@ public class ParamRuner extends BlockJUnit4ClassRunner {
     }
 
     private boolean isParamAnnotated(Annotation[] annotations) {
-        return Arrays.stream(annotations).anyMatch(annotation -> annotation instanceof TestAnnotation);
+        return Arrays.stream(annotations).anyMatch(annotation -> annotation instanceof OwnParamsAnnotation);
     }
 
     @Override
     protected void validatePublicVoidNoArgMethods(Class<? extends Annotation> annotation, boolean isStatic,
             List<Throwable> errors) {
         List<FrameworkMethod> methods = this.getTestClass().getAnnotatedMethods(annotation);
-        Iterator i$ = methods.iterator();
-        while (i$.hasNext()) {
-            FrameworkMethod eachTestMethod = (FrameworkMethod) i$.next();
+        Iterator iterator = methods.iterator();
+        while (iterator.hasNext()) {
+            FrameworkMethod eachTestMethod = (FrameworkMethod) iterator.next();
             if (isParamAnnotated(eachTestMethod.getAnnotations())) {
                 eachTestMethod.validatePublicVoid(isStatic, errors);
             } else {
@@ -53,7 +54,7 @@ public class ParamRuner extends BlockJUnit4ClassRunner {
 
     @Override
     protected void runChild(FrameworkMethod method, RunNotifier notifier) {
-        TestAnnotation annotation = method.getAnnotation(TestAnnotation.class);
+        OwnParamsAnnotation annotation = method.getAnnotation(OwnParamsAnnotation.class);
         Description description = this.describeChild(method);
         if (annotation == null) {
             super.runChild(method, notifier);

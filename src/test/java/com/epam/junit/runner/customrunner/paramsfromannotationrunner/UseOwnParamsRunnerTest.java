@@ -1,14 +1,14 @@
-package com.epam.junit.runner.customrunner.paramrunner;
+package com.epam.junit.runner.customrunner.paramsfromannotationrunner;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@RunWith(ParamRuner.class)
-public class ParamRunnerTest {
+//Test class to demonstrate custom runner for using params from annotation
+@RunWith(UseOwnParamsRunner.class)
+public class UseOwnParamsRunnerTest {
 
     @Test
     public void test() {
@@ -21,7 +21,7 @@ public class ParamRunnerTest {
     }
 
     @Test
-    @TestAnnotation({ 2, 3, 4, 0 })
+    @OwnParamsAnnotation({2, 3, 4, 0})
     public void test2(int a) {
         // Given
 

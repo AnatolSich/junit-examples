@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ TimeoutTest.class, TimeoutRuleTest.class, TestWatcherTest.class, TestNameTest.class,
+@Suite.SuiteClasses({TimeoutTest.class, TimeoutRuleTest.class, TestWatcherTest.class, TestNameTest.class,
         TempFolderTest.class, RuleChainTest.class, ExternalResourceTest.class, ExceptionTesting.class,
-        ErrorCollectorTest.class, LogTest.class })
+        ErrorCollectorTest.class, LogTest.class})
 public class RuleTests {
 }

@@ -1,15 +1,12 @@
-package com.epam.junit.runner.parameter;
+package com.epam.junit.runner.parameterized;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+//Custom parser for using in @TestWith annotated tests
 public class CustomCoercer {
 
-    /**
-     * no generic support
-     *
-     * @param input
-     * @return
-     */
     public List<Integer> createIntList(String input) {
         String[] elements = input.replaceAll("\\[|]", "").split(";");
 

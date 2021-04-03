@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(org.junit.experimental.categories.Categories.class)
 @IncludeCategory(MyCategories.ControllerTest.class)
-@SuiteClasses({ TestA.class, TestB.class })
+@SuiteClasses({TestA.class, TestB.class})
 public class ControllerTests {
 
 }
