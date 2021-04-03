@@ -5,8 +5,10 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.*;
+
 public class AssumptionTest {
 
+    //works similarly to assertions but does not fail - only ignores tests where assumption fails
     // works with default runner
     @Test
     public void onlyRunsOnLinux() {

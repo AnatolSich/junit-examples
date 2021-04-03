@@ -63,9 +63,9 @@ public class AssertionTest {
     @Test
     public void testArray() {
         // Given
-        int[] first = new int[]{ 1, 2, 3 };
-        int[] second = new int[]{ 1, 2, 3 };
-        int[] third = new int[]{ 1, 2 };
+        int[] first = new int[]{1, 2, 3};
+        int[] second = new int[]{1, 2, 3};
+        int[] third = new int[]{1, 2};
         // When
 
         // Then

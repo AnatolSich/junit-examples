@@ -1,4 +1,5 @@
 package com.epam.junit.basic.fixtures;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -8,6 +9,9 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 
 public class FixtureTest {
+
+    //@AfterClass/@BeforeClass needs public static void method without params
+    //@After/@Before needs public void method without params
 
     @BeforeClass
     public static void beforeClass() {

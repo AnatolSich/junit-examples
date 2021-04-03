@@ -6,6 +6,9 @@ import org.junit.runners.MethodSorters;
 
 import java.util.Arrays;
 
+//Default- by hashcodes of test names
+//Name ascending - by compare test names Strings
+//JVM - by order which JVM reflection returns for test methods
 @FixMethodOrder(MethodSorters.JVM)
 public class TestOrder {
 

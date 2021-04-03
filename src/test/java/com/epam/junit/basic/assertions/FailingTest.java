@@ -28,7 +28,7 @@ public class FailingTest {
     }
 
     @Test
-    public void failWithoutMessage(){
+    public void failWithoutMessage() {
         //Given
 
         //When
@@ -38,7 +38,7 @@ public class FailingTest {
     }
 
     @Test
-    public void failWithMessage(){
+    public void failWithMessage() {
         //Given
 
         //When
