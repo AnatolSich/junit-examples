@@ -6,7 +6,7 @@ import com.epam.junit.rule.exception.ExceptionTesting;
 import com.epam.junit.rule.externalresource.ExternalResourceTest;
 import com.epam.junit.rule.rulechain.RuleChainTest;
 import com.epam.junit.rule.tempfolder.TempFolderTest;
-import com.epam.junit.rule.testname.TestNameTest;
+import com.epam.junit.rule.testmethodname.TestNameTest;
 import com.epam.junit.rule.testwatcher.TestWatcherTest;
 import com.epam.junit.rule.timeout.TimeoutRuleTest;
 import com.epam.junit.rule.timeout.TimeoutTest;

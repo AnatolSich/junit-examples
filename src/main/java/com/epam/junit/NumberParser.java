@@ -1,5 +1,8 @@
 package com.epam.junit;
 
+//Parser for only positive number for exception testing
+//can throw RuntimeException with different messages
+
 public class NumberParser {
 
     public int parsePositiveNumber(String number) {

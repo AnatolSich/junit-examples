@@ -8,39 +8,38 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class ErrorCollectorTest {
 
-
-
+    //Test will fail after first exception
     @Test
     public void test() {
         List<String> list = new ArrayList<>();
-        for(int i=0;i<100;i++) {
-            try{
+        for (int i = 0; i < 100; i++) {
+            try {
                 list.add(randomException());
-            } catch (Exception exc){
+            } catch (Exception exc) {
                 fail("exception happened");
             }
         }
         System.out.println(list.size());
     }
 
+
+    /*ErrorCollector rule - allows execution of a test to continue after the
+     first problem is found (for example, to collect all the incorrect rows in a table)*/
+    //can collect exceptions and evaluate them at the end of testing
     @Rule
-    public ErrorCollector errorCollector =
-            new ErrorCollector();
+    public ErrorCollector errorCollector = new ErrorCollector();
 
     @Test
     public void test2() {
         List<String> list = new ArrayList<>();
-        for(int i=0;i<100;i++) {
-            try{
+        for (int i = 0; i < 100; i++) {
+            try {
                 list.add(randomException());
-            } catch (Exception exc){
+            } catch (Exception exc) {
                 errorCollector.addError(exc);
             }
         }
@@ -49,7 +48,7 @@ public class ErrorCollectorTest {
 
     private String randomException() {
         Random random = new Random();
-        if(random.nextBoolean()){
+        if (random.nextBoolean()) {
             throw new RuntimeException();
         }
         return "";

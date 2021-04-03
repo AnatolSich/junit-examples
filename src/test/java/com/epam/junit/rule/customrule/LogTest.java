@@ -1,5 +1,5 @@
 package com.epam.junit.rule.customrule;
-import com.epam.junit.rule.rulechain.LogRule;
+
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -7,6 +7,7 @@ import java.util.logging.Level;
 
 public class LogTest {
 
+    //Custom rule to check record attributes
     @Rule
     public LogTestingRule logRule = new LogTestingRule();
 
@@ -21,10 +22,10 @@ public class LogTest {
     }
 
     @Test
-    public void testWithDifferentLogget() {
+    public void testWithDifferentLogger() {
         // Given
         LoggerClass underTest = new LoggerClass("myLogger");
-        logRule.expect("myLogger", Level.INFO, "normal2");
+        logRule.expect("myLogger", Level.INFO, "normal");
         // When
         underTest.logInfo();
         // Then

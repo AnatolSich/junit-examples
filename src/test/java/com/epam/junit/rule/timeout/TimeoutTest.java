@@ -2,6 +2,7 @@ package com.epam.junit.rule.timeout;
 
 import org.junit.Test;
 
+//different timeout rule for every test
 public class TimeoutTest {
 
     private static final int TIMEOUT = 100;

@@ -2,13 +2,14 @@ package com.epam.junit.rule.timeout;
 
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestName;
 import org.junit.rules.Timeout;
 
 public class TimeoutRuleTest {
 
+    //if any test run reaches time limit - it fails
+    //rule is for all class
     @Rule
-    public Timeout timeoutRule = new Timeout(100);
+    public Timeout timeoutRule = Timeout.millis(100);
 
     @Test
     public void testTimeout1() throws InterruptedException {

@@ -24,6 +24,8 @@ public class ExceptionTesting {
         assertThat(parse, equalTo(1));
     }
 
+    //First approach to test exceptions
+    //Only by it type
     @Test(expected = RuntimeException.class)
     public void testParsePositiveNumberWithInvalidNumber() {
         // Given
@@ -43,6 +45,9 @@ public class ExceptionTesting {
         // exception is thrown
     }
 
+    //Second approach to test exceptions
+    //By using try/catch with checking the messages in assert
+    //Need to add fail() after method invocation in case no exception thrown (fake positive test)
     @Test
     public void testParsePositiveNumberWithNegativeNumber2() {
         // Given
@@ -58,6 +63,11 @@ public class ExceptionTesting {
         // exception is thrown
     }
 
+    //Third approach to exception testing
+    //Checks for types and message and no need to add fail()
+
+    //ExpectedException rule allows to verify that your code throws a specific exception
+    //none() - returns a rule that expects no exception to be thrown
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 

@@ -7,6 +7,8 @@ import org.junit.rules.ExternalResource;
 
 public class ExternalResourceTest {
 
+    //Rule is for test class (beforeclass/afterclass behavior)
+    //method needs to be static
     @ClassRule
     public static ExternalResource classExternalResource = new ExternalResource() {
         @Override
@@ -20,10 +22,14 @@ public class ExternalResourceTest {
         }
     };
 
+    //ExternalResource used for open/close external resources
+    //Adds before/after functionality
     @Rule
     public ExternalResource externalResource = new ExternalResource() {
         @Override
-        protected void before() throws Throwable { System.out.println("opening resource"); }
+        protected void before() throws Throwable {
+            System.out.println("opening resource");
+        }
 
         @Override
         protected void after() {
