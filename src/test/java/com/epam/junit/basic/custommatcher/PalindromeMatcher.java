@@ -4,20 +4,20 @@ import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
-public class PalidromeMatcher extends BaseMatcher<String> {
+public class PalindromeMatcher extends BaseMatcher<String> {
 
     private final boolean lookingForPositiveMatch;
 
-    private PalidromeMatcher(boolean lookingForPositiveMatch) {
+    private PalindromeMatcher(boolean lookingForPositiveMatch) {
         this.lookingForPositiveMatch = lookingForPositiveMatch;
     }
 
     public static Matcher<String> isAPalindrome() {
-        return new PalidromeMatcher(true);
+        return new PalindromeMatcher(true);
     }
 
     public static Matcher<String> isNotAPalindrome() {
-        return new PalidromeMatcher(false);
+        return new PalindromeMatcher(false);
     }
 
     @Override

@@ -2,8 +2,8 @@ package com.epam.junit.basic.custommatcher;
 
 import org.junit.Test;
 
-import static com.epam.junit.basic.custommatcher.PalidromeMatcher.isAPalindrome;
-import static com.epam.junit.basic.custommatcher.PalidromeMatcher.isNotAPalindrome;
+import static com.epam.junit.basic.custommatcher.PalindromeMatcher.isAPalindrome;
+import static com.epam.junit.basic.custommatcher.PalindromeMatcher.isNotAPalindrome;
 import static org.junit.Assert.assertThat;
 public class CustomMatcherTest {
 
